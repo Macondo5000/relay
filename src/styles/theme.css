@@ -1,0 +1,651 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     Dark Mode — ChatGPT-inspired palette
+     ─────────────────────────────────────────────────────────
+     Sidebar:        #171717
+     Panel / Content: #212121
+     Surface (hover/selected/bubble): #2f2f2f
+     Input:          #2f2f2f  border #424242
+     ═══════════════════════════════════════════════════════════ */
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  /* ── Background overrides ──────────────��────────────────── */
+  .dark .bg-white        { background-color: #212121 !important; }
+  .dark .bg-gray-50      { background-color: #2f2f2f !important; }
+  .dark .bg-gray-100     { background-color: #2f2f2f !important; }
+  .dark .bg-\[\#f7f8f8\] { background-color: #171717 !important; }
+  .dark .bg-\[\#F2F4F7\] { background-color: #212121 !important; }
+
+  /* ── Text overrides ─────────────────────────────────────── */
+  .dark .text-gray-900 { color: #ececec !important; }
+  .dark .text-gray-800 { color: #d4d4d4 !important; }
+  .dark .text-gray-700 { color: #b4b4b4 !important; }
+  .dark .text-gray-600 { color: #9b9b9b !important; }
+  .dark .text-gray-500 { color: #8e8e8e !important; }
+  .dark .text-gray-400 { color: #777777 !important; }
+  .dark .text-gray-300 { color: #666666 !important; }
+
+  /* ── Border overrides ───────────────────────────────────── */
+  .dark .border-gray-200     { border-color: #2f2f2f !important; }
+  .dark .border-gray-100     { border-color: #2a2a2a !important; }
+  .dark .border-gray-50      { border-color: #262626 !important; }
+  .dark .border-gray-200\/70 { border-color: rgba(47,47,47,0.7) !important; }
+
+  /* ── Hover overrides ────────────────────────────────────── */
+  .dark .hover\:bg-gray-50:hover  { background-color: #2f2f2f !important; }
+  .dark .hover\:bg-gray-100:hover { background-color: #2f2f2f !important; }
+
+  /* ── Input & Textarea ───────────────────────────────────── */
+  .dark input,
+  .dark textarea {
+    background-color: transparent !important;
+    color: #ececec !important;
+  }
+  .dark input::placeholder,
+  .dark textarea::placeholder {
+    color: #666 !important;
+  }
+
+  /* ── Chat Message Bubbles (semantic classes) ────────────── */
+  /* Other people's messages — surface gray */
+  .dark .msg-bubble-other {
+    background-color: #2f2f2f !important;
+    color: #ececec !important;
+    border-color: transparent !important;
+  }
+  /* Current user's messages — white */
+  .dark .msg-bubble-self {
+    background-color: #ffffff !important;
+    color: #171717 !important;
+  }
+
+  /* ── Chat Input Form ────────────────────────────────────── */
+  .dark .chat-input-form {
+    background-color: #2f2f2f !important;
+    border-color: #424242 !important;
+  }
+  .dark .chat-input-form:focus-within {
+    border-color: #555 !important;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.05) !important;
+  }
+  .dark .chat-input-form input {
+    background-color: transparent !important;
+  }
+
+  /* ── Search input box ───────────────────────────────────── */
+  .dark .search-input-box {
+    background-color: transparent !important;
+    border: 1px solid #424242 !important;
+  }
+  .dark .search-input-box input {
+    background-color: transparent !important;
+  }
+
+  /* ── Bot avatar — keep white in dark mode ───────────────── */
+  .dark .bot-avatar {
+    background-color: #ffffff !important;
+  }
+  .dark .bot-avatar svg {
+    color: #171717 !important;
+  }
+
+  /* ── Quick Prompt chips ─────────────────────────────────── */
+  .dark .quick-prompt-chip {
+    background-color: #2f2f2f !important;
+    border-color: #424242 !important;
+    color: #b4b4b4 !important;
+  }
+  .dark .quick-prompt-chip:hover {
+    background-color: #3a3a3a !important;
+    border-color: #555 !important;
+  }
+
+  /* ── Send button in dark mode ──────────────────────────── */
+  .dark .send-btn-active {
+    background-color: #ffffff !important;
+    color: #171717 !important;
+  }
+  .dark .send-btn-disabled {
+    background-color: #2f2f2f !important;
+    color: #555 !important;
+  }
+
+  /* ── Progress bar in dark mode ──────────────────────────── */
+  .dark .bg-black { background-color: #ffffff !important; }
+  .dark .text-black { color: #ececec !important; }
+
+  /* ── Tag overrides ──────────────────────────────────────── */
+  .dark .bg-gray-300\/40 { background-color: rgba(80,80,80,0.5) !important; }
+
+  /* ── Scrollbar ──────────────────────────────────────────── */
+  .dark ::-webkit-scrollbar-track { background: #212121; }
+  .dark ::-webkit-scrollbar-thumb { background: #424242; border-radius: 4px; }
+
+  /* ── Ring overrides ─────────────────────────────────────── */
+  .dark .ring-white { --tw-ring-color: #212121 !important; }
+
+  /* ── Chat sender names — white in dark ─────────────────── */
+  .dark .chat-sender-name {
+    color: #ffffff !important;
+  }
+
+  /* ── AI Assistant tag — visible in dark ─────────────────── */
+  .dark .ai-assistant-tag {
+    color: #d4d4d4 !important;
+    background-color: rgba(100,100,100,0.5) !important;
+  }
+
+  /* ── Admin pages (Offboarding / Avatar Admin) ──────────── */
+  .dark .admin-page-bg {
+    background-color: #212121 !important;
+  }
+  .dark .admin-header {
+    background-color: #212121 !important;
+    border-color: #2f2f2f !important;
+  }
+  .dark .admin-card {
+    background-color: #2f2f2f !important;
+    border-color: #424242 !important;
+  }
+  .dark .admin-card:hover {
+    border-color: #555555 !important;
+  }
+  .dark .admin-action-btn {
+    background-color: #ffffff !important;
+    color: #171717 !important;
+  }
+  .dark .admin-action-btn:hover {
+    background-color: #e5e5e5 !important;
+  }
+  .dark .days-left-tag {
+    background-color: #3a3a3a !important;
+    color: #c4c4c4 !important;
+  }
+  .dark .days-left-tag-urgent {
+    background-color: rgba(217,119,6,0.15) !important;
+    color: #f59e0b !important;
+  }
+  /* Manage button — white text in dark */
+  .dark .admin-manage-btn {
+    border-color: #424242 !important;
+    color: #ffffff !important;
+  }
+  .dark .admin-manage-btn:hover {
+    background-color: #3a3a3a !important;
+  }
+  /* Admin modal title — white in dark */
+  .dark .admin-modal-title {
+    color: #ffffff !important;
+  }
+
+  /* ── 1. Avatar stack ring — light gray in dark (not black) ── */
+  .dark .avatar-stack-ring {
+    --tw-ring-color: #3a3a3a !important;
+  }
+
+  /* ── 3. Public access badge — visible border in dark ──────── */
+  .dark .access-badge-public {
+    border-color: #555 !important;
+    color: #9b9b9b !important;
+  }
+
+  /* ── 4. Restricted badge — lighter purple text in dark ────── */
+  .dark .access-badge-restricted {
+    border-color: #7c3aed !important;
+    color: #a78bfa !important;
+  }
+
+  /* ── 5. Admin dividers — subtle light gray in dark ────────── */
+  .dark .admin-divider {
+    border-color: #3a3a3a !important;
+  }
+
+  /* ── 6&7. Modal dark mode overrides ──────────────────────── */
+  .dark .admin-modal-bg {
+    background-color: #2f2f2f !important;
+  }
+  .dark .modal-switch-track {
+    background-color: #212121 !important;
+  }
+  .dark .modal-switch-indicator {
+    background-color: #3a3a3a !important;
+    box-shadow: none !important;
+  }
+  .dark .modal-switch-active {
+    color: #ffffff !important;
+  }
+  .dark .modal-btn-active {
+    background-color: #ffffff !important;
+    color: #171717 !important;
+  }
+  .dark .modal-btn-active:hover {
+    background-color: #e5e5e5 !important;
+  }
+  .dark .modal-btn-inactive {
+    background-color: #3a3a3a !important;
+    color: #666 !important;
+  }
+  .dark .modal-list-container {
+    border-color: #424242 !important;
+  }
+  .dark .modal-list-divider > * {
+    border-color: #3a3a3a !important;
+  }
+  .dark .modal-input {
+    background-color: #212121 !important;
+    border-color: #424242 !important;
+    color: #e5e5e5 !important;
+  }
+  .dark .modal-input:focus {
+    border-color: #555 !important;
+  }
+  .dark .modal-input-icon {
+    color: #666 !important;
+  }
+  /* Modal list item hover — match sidebar hover (#2f2f2f relative to modal bg) */
+  .dark .modal-list-item:hover {
+    background-color: #3a3a3a !important;
+  }
+  .dark .modal-list-item-selected {
+    background-color: #3a3a3a !important;
+  }
+
+  /* ── Allowed Members pill — distinct bg in dark ──────────── */
+  .dark .member-pill {
+    background-color: #212121 !important;
+  }
+  .dark .member-pill span {
+    color: #d4d4d4 !important;
+  }
+
+  /* ── Live badge dark mode ──────────────────────────────────── */
+  .dark .live-badge {
+    background-color: rgba(16,185,129,0.15) !important;
+  }
+
+  /* ── Relay logo — invert in dark mode ──────────────────────── */
+  .dark .relay-logo {
+    background-color: #ffffff !important;
+  }
+  .dark .relay-logo span {
+    color: #000000 !important;
+  }
+
+  /* ── Link Apps page — dark mode ────────────────────────────── */
+  .dark .link-apps-page {
+    background-color: #212121 !important;
+  }
+  .dark .link-search-input {
+    background-color: #2f2f2f !important;
+    border-color: #424242 !important;
+    color: #e5e5e5 !important;
+  }
+  .dark .link-search-input:focus {
+    border-color: #555 !important;
+  }
+  .dark .link-tab {
+    background-color: #2f2f2f !important;
+    color: #999 !important;
+    border-color: transparent !important;
+  }
+  .dark .link-tab:hover {
+    background-color: #3a3a3a !important;
+  }
+  .dark .link-tab-active {
+    background-color: rgba(0, 94, 255, 0.12) !important;
+    color: #6ba3ff !important;
+    border-color: rgba(0, 94, 255, 0.2) !important;
+  }
+  .dark .link-tab[class*="bg-blue-50"] {
+    background-color: rgba(0, 94, 255, 0.12) !important;
+    color: #6ba3ff !important;
+    border-color: rgba(0, 94, 255, 0.2) !important;
+  }
+  .dark .link-divider {
+    border-color: #2f2f2f !important;
+  }
+  .dark .link-app-card {
+    background: #2f2f2f !important;
+  }
+  .dark .link-app-card p {
+    color: #e5e5e5 !important;
+  }
+  .dark .link-app-card .border-gray-100 {
+    border-color: #424242 !important;
+    background-color: #212121 !important;
+  }
+  .dark .link-action-btn {
+    border-color: #666 !important;
+    color: #ccc !important;
+  }
+  .dark .link-action-btn:hover {
+    background-color: #3a3a3a !important;
+  }
+  .dark .link-btn-connect {
+    border-color: #4a90ff !important;
+    color: #6ba3ff !important;
+  }
+  .dark .link-btn-connect:hover {
+    background-color: #005eff !important;
+    color: #fff !important;
+  }
+
+  /* ── Linked Tools List (B panel) — dark mode ───────────────── */
+  .dark .linked-tools-list {
+    background-color: #212121 !important;
+    border-color: #2f2f2f !important;
+  }
+  .dark .linked-tool-item:hover {
+    background-color: #2f2f2f !important;
+  }
+  .dark .linked-tool-item-selected {
+    background-color: #2f2f2f !important;
+  }
+  .dark .linked-tool-icon-wrap {
+    border-color: #424242 !important;
+    background-color: #2f2f2f !important;
+  }
+  .dark .linked-tool-divider {
+    border-color: #2a2a2a !important;
+  }
+
+  /* ── Onboarding Gate — dark mode ──────────────────────────── */
+  .dark .onboarding-gate {
+    background-color: #171717 !important;
+  }
+  .dark .onboarding-step-prev {
+    background-color: #555 !important;
+  }
+  .dark .onboarding-step-current {
+    background-color: #ececec !important;
+  }
+  .dark .onboarding-divider {
+    border-color: #2f2f2f !important;
+  }
+  .dark .onboarding-search {
+    background-color: #2f2f2f !important;
+    border-color: #424242 !important;
+    color: #e5e5e5 !important;
+  }
+  .dark .onboarding-search:focus {
+    border-color: #555 !important;
+  }
+  .dark .onboarding-app-card {
+    background-color: #2f2f2f !important;
+    --tw-ring-color: #424242 !important;
+  }
+  .dark .onboarding-app-card p {
+    color: #e5e5e5 !important;
+  }
+  .dark .onboarding-icon-wrap {
+    border-color: #424242 !important;
+    background-color: #212121 !important;
+  }
+  .dark .onboarding-badge {
+    background-color: #2f2f2f !important;
+    border-color: #424242 !important;
+    color: #999 !important;
+  }
+  .dark .onboarding-continue-btn:not(:disabled) {
+    background-color: #ffffff !important;
+    color: #171717 !important;
+  }
+  .dark .onboarding-continue-btn:not(:disabled):hover {
+    background-color: #e5e5e5 !important;
+  }
+  .dark .onboarding-continue-btn:disabled {
+    background-color: #2f2f2f !important;
+    color: #555 !important;
+  }
+
+  /* ── Link Modal — dark mode ─────────────────────────────────── */
+  .dark .link-modal-card {
+    background-color: #2f2f2f !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+  }
+  .dark .link-modal-close {
+    color: #888 !important;
+  }
+  .dark .link-modal-close:hover {
+    color: #ccc !important;
+    background-color: #3a3a3a !important;
+  }
+  .dark .link-modal-title {
+    color: #ececec !important;
+  }
+  .dark .link-modal-label {
+    color: #b4b4b4 !important;
+  }
+  .dark .link-modal-input {
+    background-color: #212121 !important;
+    border-color: #424242 !important;
+    color: #e5e5e5 !important;
+  }
+  .dark .link-modal-input:focus {
+    border-color: #555 !important;
+  }
+  .dark .link-modal-submit-btn:not(:disabled) {
+    background-color: #ffffff !important;
+    color: #171717 !important;
+  }
+  .dark .link-modal-submit-btn:not(:disabled):hover {
+    background-color: #e5e5e5 !important;
+  }
+  .dark .link-modal-submit-btn:disabled {
+    background-color: #212121 !important;
+    color: #555 !important;
+  }
+  .dark .link-modal-help-title {
+    color: #999 !important;
+  }
+  .dark .link-modal-help-step {
+    color: #888 !important;
+  }
+  .dark .link-modal-help-note {
+    color: #666 !important;
+  }
+  .dark .link-modal-browser-bar {
+    background-color: #212121 !important;
+    border-color: #424242 !important;
+  }
+  .dark .link-modal-browser-url {
+    color: #666 !important;
+  }
+  .dark .link-modal-social-btn {
+    background-color: #212121 !important;
+    border-color: #424242 !important;
+    color: #ccc !important;
+  }
+  .dark .link-modal-social-btn:hover {
+    background-color: #3a3a3a !important;
+  }
+  .dark .link-modal-divider-line .border-t {
+    border-color: #3a3a3a !important;
+  }
+  .dark .link-modal-content {
+    color: #e5e5e5 !important;
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
