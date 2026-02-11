@@ -16,6 +16,45 @@ import { LinkModal } from './components/LinkModal';
 import { Employee, UserProfile, Organization } from './types';
 import clsx from 'clsx';
 
+// ── Tool Icon Imports ────────────────────────────────────────
+import iconNotion from '@/assets/icon-notion.png';
+import iconGDrive from '@/assets/icon-gdrive.png';
+import iconGDocs from '@/assets/icon-gdocs.png';
+import iconGSheets from '@/assets/icon-gsheets.png';
+import iconGSlides from '@/assets/icon-gslides.png';
+import iconDropbox from '@/assets/icon-dropbox.png';
+import iconOneDrive from '@/assets/icon-onedrive.png';
+import iconSharepoint from '@/assets/icon-sharepoint.png';
+import iconConfluence from '@/assets/icon-confluence.png';
+import iconTypeform from '@/assets/icon-typeform.png';
+import iconGmail from '@/assets/icon-gmail.png';
+import iconOutlook from '@/assets/icon-outlook.png';
+import iconSlack from '@/assets/icon-slack.png';
+import iconDiscord from '@/assets/icon-discord.png';
+import iconIntercom from '@/assets/icon-intercom.png';
+import iconTelegram from '@/assets/icon-telegram.png';
+import iconWhatsApp from '@/assets/icon-whatsapp.png';
+import iconGCal from '@/assets/icon-gcal.png';
+import iconOutCal from '@/assets/icon-outcal.png';
+import iconCalendly from '@/assets/icon-calendly.png';
+import iconZoom from '@/assets/icon-zoom.png';
+import iconFireflies from '@/assets/icon-fireflies.png';
+import iconJira from '@/assets/icon-jira.png';
+import iconLinear from '@/assets/icon-linear.png';
+import iconGitHub from '@/assets/icon-github.png';
+import iconGitLab from '@/assets/icon-gitlab.png';
+import iconHubSpot from '@/assets/icon-hubspot.png';
+import iconMailchimp from '@/assets/icon-mailchimp.png';
+import iconSendGrid from '@/assets/icon-sendgrid.png';
+import iconAirtable from '@/assets/icon-airtable.png';
+import iconMixpanel from '@/assets/icon-mixpanel.png';
+import iconGAnalytics from '@/assets/icon-ganalytics.png';
+import iconFigma from '@/assets/icon-figma.png';
+import iconFramer from '@/assets/icon-framer.png';
+import iconChatGPT from '@/assets/icon-chatgpt.png';
+import iconDeepSeek from '@/assets/icon-deepseek.png';
+import iconCursor from '@/assets/icon-cursor.png';
+
 // ── Organizations ────────────────────────────────────────────
 const ORGANIZATIONS: Organization[] = [
   { id: 'tanka', name: 'Tanka', logo: 'T' },
@@ -124,48 +163,52 @@ export default function App() {
   
   // Link Tab State
   const [linkApps, setLinkApps] = useState<AppItem[]>([
-    { id: 'notion',     name: 'Notion',             linked: true,  category: ['Featured', 'Files & Docs'],                iconBg: '#000000', iconColor: '#fff', iconLabel: 'N', authType: 'oauth' },
-    { id: 'gdrive',     name: 'Google Drive',       linked: true,  category: ['Featured', 'Files & Docs'],                iconBg: '#34A853', iconColor: '#fff', iconLabel: 'GD', authType: 'oauth' },
-    { id: 'gdocs',      name: 'Google Docs',        linked: true,  category: ['Featured', 'Files & Docs'],                iconBg: '#4285F4', iconColor: '#fff', iconLabel: 'GD', authType: 'oauth' },
-    { id: 'gsheets',    name: 'Google Sheets',      linked: true,  category: ['Featured', 'Files & Docs'],                iconBg: '#0F9D58', iconColor: '#fff', iconLabel: 'GS', authType: 'oauth' },
-    { id: 'gslides',    name: 'Google Slides',      linked: true,  category: ['Featured', 'Files & Docs'],                iconBg: '#F4B400', iconColor: '#fff', iconLabel: 'GS', authType: 'oauth' },
-    { id: 'dropbox',    name: 'Dropbox',            linked: true,  category: ['Featured', 'Files & Docs'],                iconBg: '#0061FF', iconColor: '#fff', iconLabel: 'D', authType: 'oauth' },
-    { id: 'onedrive',   name: 'OneDrive',           linked: false, category: ['Featured', 'Files & Docs'],                iconBg: '#0078D4', iconColor: '#fff', iconLabel: 'OD', authType: 'oauth' },
-    { id: 'sharepoint', name: 'Sharepoint',         linked: false, category: ['Files & Docs'],                            iconBg: '#038387', iconColor: '#fff', iconLabel: 'SP', authType: 'oauth' },
-    { id: 'confluence', name: 'Confluence',         linked: false, category: ['Files & Docs'],                            iconBg: '#172B4D', iconColor: '#fff', iconLabel: 'C', authType: 'oauth' },
-    { id: 'typeform',   name: 'Typeform',           linked: false, category: ['Files & Docs'],                            iconBg: '#262627', iconColor: '#fff', iconLabel: 'Tf', authType: 'oauth' },
-    { id: 'evernote',   name: 'Evernote',           linked: false, category: ['Files & Docs'],                            iconBg: '#00A82D', iconColor: '#fff', iconLabel: 'EN', authType: 'oauth' },
-    { id: 'box',        name: 'Box',                linked: false, category: ['Files & Docs'],                            iconBg: '#0061D5', iconColor: '#fff', iconLabel: 'Bx', authType: 'oauth' },
-    { id: 'gmail',      name: 'Gmail',              linked: false, category: ['Email & Messengers'],                      iconBg: '#EA4335', iconColor: '#fff', iconLabel: 'Gm', authType: 'oauth' },
-    { id: 'outlook',    name: 'Outlook',            linked: true,  category: ['Featured', 'Email & Messengers'],          iconBg: '#0078D4', iconColor: '#fff', iconLabel: 'O', authType: 'oauth' },
-    { id: 'slack',      name: 'Slack',              linked: true,  category: ['Featured', 'Email & Messengers'],          iconBg: '#4A154B', iconColor: '#fff', iconLabel: 'S', authType: 'oauth' },
-    { id: 'teams',      name: 'Microsoft Teams',    linked: false, category: ['Email & Messengers', 'Meeting & Voice'],   iconBg: '#6264A7', iconColor: '#fff', iconLabel: 'T', authType: 'oauth' },
-    { id: 'discord',    name: 'Discord',            linked: false, category: ['Email & Messengers'],                      iconBg: '#5865F2', iconColor: '#fff', iconLabel: 'Dc', authType: 'oauth' },
-    { id: 'intercom',   name: 'Intercom',           linked: false, category: ['Email & Messengers', 'Customer & Growth'], iconBg: '#1F8DED', iconColor: '#fff', iconLabel: 'IC', authType: 'oauth' },
-    { id: 'gcal',       name: 'Google Calendar',    linked: true,  category: ['Featured', 'Calendars'],                   iconBg: '#4285F4', iconColor: '#fff', iconLabel: '31', authType: 'oauth' },
-    { id: 'outcal',     name: 'Outlook Calendar',   linked: false, category: ['Calendars'],                               iconBg: '#0078D4', iconColor: '#fff', iconLabel: 'OC', authType: 'oauth' },
-    { id: 'zoom',       name: 'Zoom',               linked: true,  category: ['Featured', 'Meeting & Voice'],             iconBg: '#2D8CFF', iconColor: '#fff', iconLabel: 'Z', authType: 'oauth' },
-    { id: 'gmeet',      name: 'Google Meet',        linked: true,  category: ['Meeting & Voice'],                         iconBg: '#00897B', iconColor: '#fff', iconLabel: 'GM', authType: 'oauth' },
-    { id: 'loom',       name: 'Loom',               linked: true,  category: ['Meeting & Voice'],                         iconBg: '#625DF5', iconColor: '#fff', iconLabel: 'Lo', authType: 'oauth' },
-    { id: 'webex',      name: 'Webex',              linked: false, category: ['Meeting & Voice'],                         iconBg: '#00BCF2', iconColor: '#fff', iconLabel: 'Wx', authType: 'oauth' },
-    { id: 'jira',       name: 'Jira',               linked: false, category: ['Project & Task'],                          iconBg: '#0052CC', iconColor: '#fff', iconLabel: 'J', authType: 'oauth' },
-    { id: 'linear',     name: 'Linear',             linked: false, category: ['Project & Task'],                          iconBg: '#5E6AD2', iconColor: '#fff', iconLabel: 'L', authType: 'oauth' },
-    { id: 'asana',      name: 'Asana',              linked: false, category: ['Project & Task'],                          iconBg: '#F06A6A', iconColor: '#fff', iconLabel: 'A', authType: 'oauth' },
-    { id: 'trello',     name: 'Trello',             linked: false, category: ['Project & Task'],                          iconBg: '#0079BF', iconColor: '#fff', iconLabel: 'Tr', authType: 'oauth' },
-    { id: 'monday',     name: 'Monday.com',         linked: false, category: ['Project & Task'],                          iconBg: '#FF3D57', iconColor: '#fff', iconLabel: 'Mo', authType: 'oauth' },
-    { id: 'clickup',    name: 'ClickUp',            linked: false, category: ['Project & Task'],                          iconBg: '#7B68EE', iconColor: '#fff', iconLabel: 'CU', authType: 'oauth' },
-    { id: 'hubspot',    name: 'HubSpot',            linked: false, category: ['Customer & Growth'],                       iconBg: '#FF7A59', iconColor: '#fff', iconLabel: 'HS', authType: 'oauth' },
-    { id: 'salesforce', name: 'Salesforce',         linked: false, category: ['Customer & Growth'],                       iconBg: '#00A1E0', iconColor: '#fff', iconLabel: 'SF', authType: 'oauth' },
-    { id: 'zapier',     name: 'Zapier',             linked: false, category: ['Customer & Growth'],                       iconBg: '#FF4A00', iconColor: '#fff', iconLabel: 'Zp', authType: 'oauth' },
-    { id: 'airtable',   name: 'Airtable',           linked: false, category: ['Data & Analytics'],                        iconBg: '#FCBF49', iconColor: '#fff', iconLabel: 'AT', authType: 'oauth' },
-    { id: 'tableau',    name: 'Tableau',            linked: false, category: ['Data & Analytics'],                        iconBg: '#E97627', iconColor: '#fff', iconLabel: 'Tb', authType: 'oauth' },
-    { id: 'power-bi',   name: 'Power BI',           linked: false, category: ['Data & Analytics'],                        iconBg: '#F2C811', iconColor: '#000', iconLabel: 'PB', authType: 'oauth' },
-    { id: 'figma',      name: 'Figma',              linked: true,  category: ['Design & Creative'],                       iconBg: '#F24E1E', iconColor: '#fff', iconLabel: 'F', authType: 'oauth' },
-    { id: 'miro',       name: 'Miro',               linked: false, category: ['Design & Creative'],                       iconBg: '#FFD02F', iconColor: '#050038', iconLabel: 'M', authType: 'oauth' },
-    { id: 'github',     name: 'GitHub',             linked: true,  category: ['Featured', 'Project & Task'],              iconBg: '#24292E', iconColor: '#fff', iconLabel: 'GH', authType: 'oauth' },
-    { id: 'chatgpt',    name: 'ChatGPT',            linked: true,  category: ['AI Models'],                               iconBg: '#10A37F', iconColor: '#fff', iconLabel: 'AI', authType: 'api-key' },
-    { id: 'claude',     name: 'Claude',             linked: false, category: ['AI Models'],                               iconBg: '#D4A27F', iconColor: '#fff', iconLabel: 'Cl', authType: 'api-key' },
-    { id: 'tanka-ai',   name: 'Tanka AI',           linked: true,  category: ['AI Models'],                               iconBg: '#000', iconColor: '#fff', iconLabel: 'Ta', authType: 'api-key' },
+    // Files & Docs
+    { id: 'notion',     name: 'Notion',             linked: true,  category: ['Featured', 'Files & Docs'],                iconBg: '#000', iconColor: '#fff', iconLabel: 'N',  icon: iconNotion,     authType: 'oauth' },
+    { id: 'gdrive',     name: 'Google Drive',       linked: true,  category: ['Featured', 'Files & Docs'],                iconBg: '#34A853', iconColor: '#fff', iconLabel: 'GD', icon: iconGDrive,   authType: 'oauth' },
+    { id: 'gdocs',      name: 'Google Docs',        linked: true,  category: ['Featured', 'Files & Docs'],                iconBg: '#4285F4', iconColor: '#fff', iconLabel: 'GD', icon: iconGDocs,   authType: 'oauth' },
+    { id: 'gsheets',    name: 'Google Sheets',      linked: true,  category: ['Featured', 'Files & Docs'],                iconBg: '#0F9D58', iconColor: '#fff', iconLabel: 'GS', icon: iconGSheets, authType: 'oauth' },
+    { id: 'gslides',    name: 'Google Slides',      linked: true,  category: ['Featured', 'Files & Docs'],                iconBg: '#F4B400', iconColor: '#fff', iconLabel: 'GS', icon: iconGSlides, authType: 'oauth' },
+    { id: 'dropbox',    name: 'Dropbox',            linked: true,  category: ['Featured', 'Files & Docs'],                iconBg: '#0061FF', iconColor: '#fff', iconLabel: 'D',  icon: iconDropbox,  authType: 'oauth' },
+    { id: 'onedrive',   name: 'OneDrive',           linked: false, category: ['Featured', 'Files & Docs'],                iconBg: '#0078D4', iconColor: '#fff', iconLabel: 'OD', icon: iconOneDrive, authType: 'oauth' },
+    { id: 'sharepoint', name: 'Sharepoint',         linked: false, category: ['Files & Docs'],                            iconBg: '#038387', iconColor: '#fff', iconLabel: 'SP', icon: iconSharepoint, authType: 'oauth' },
+    { id: 'confluence', name: 'Confluence',         linked: false, category: ['Files & Docs'],                            iconBg: '#172B4D', iconColor: '#fff', iconLabel: 'C',  icon: iconConfluence, authType: 'oauth' },
+    { id: 'typeform',   name: 'Typeform',           linked: false, category: ['Files & Docs'],                            iconBg: '#262627', iconColor: '#fff', iconLabel: 'Tf', icon: iconTypeform, authType: 'oauth' },
+    // Email & Messengers
+    { id: 'gmail',      name: 'Gmail',              linked: false, category: ['Email & Messengers'],                      iconBg: '#EA4335', iconColor: '#fff', iconLabel: 'Gm', icon: iconGmail,    authType: 'oauth' },
+    { id: 'outlook',    name: 'Outlook',            linked: true,  category: ['Featured', 'Email & Messengers'],          iconBg: '#0078D4', iconColor: '#fff', iconLabel: 'O',  icon: iconOutlook,  authType: 'oauth' },
+    { id: 'slack',      name: 'Slack',              linked: true,  category: ['Featured', 'Email & Messengers'],          iconBg: '#4A154B', iconColor: '#fff', iconLabel: 'S',  icon: iconSlack,    authType: 'oauth' },
+    { id: 'discord',    name: 'Discord',            linked: false, category: ['Email & Messengers'],                      iconBg: '#5865F2', iconColor: '#fff', iconLabel: 'Dc', icon: iconDiscord,  authType: 'oauth' },
+    { id: 'intercom',   name: 'Intercom',           linked: false, category: ['Email & Messengers', 'Customer & Growth'], iconBg: '#1F8DED', iconColor: '#fff', iconLabel: 'IC', icon: iconIntercom, authType: 'oauth' },
+    { id: 'telegram',   name: 'Telegram',           linked: false, category: ['Email & Messengers'],                      iconBg: '#26A5E4', iconColor: '#fff', iconLabel: 'TG', icon: iconTelegram, authType: 'oauth' },
+    { id: 'whatsapp',   name: 'WhatsApp',           linked: false, category: ['Email & Messengers'],                      iconBg: '#25D366', iconColor: '#fff', iconLabel: 'WA', icon: iconWhatsApp, authType: 'oauth' },
+    // Calendars
+    { id: 'gcal',       name: 'Google Calendar',    linked: true,  category: ['Featured', 'Calendars'],                   iconBg: '#4285F4', iconColor: '#fff', iconLabel: '31', icon: iconGCal,     authType: 'oauth' },
+    { id: 'outcal',     name: 'Outlook Calendar',   linked: false, category: ['Calendars'],                               iconBg: '#0078D4', iconColor: '#fff', iconLabel: 'OC', icon: iconOutCal,   authType: 'oauth' },
+    { id: 'calendly',   name: 'Calendly',           linked: false, category: ['Calendars'],                               iconBg: '#006BFF', iconColor: '#fff', iconLabel: 'Ca', icon: iconCalendly, authType: 'oauth' },
+    // Meeting & Voice
+    { id: 'zoom',       name: 'Zoom',               linked: true,  category: ['Featured', 'Meeting & Voice'],             iconBg: '#2D8CFF', iconColor: '#fff', iconLabel: 'Z',  icon: iconZoom,      authType: 'oauth' },
+    { id: 'fireflies',  name: 'Fireflies',          linked: false, category: ['Meeting & Voice'],                         iconBg: '#6C3FE2', iconColor: '#fff', iconLabel: 'Ff', icon: iconFireflies, authType: 'oauth' },
+    // Project & Task
+    { id: 'jira',       name: 'Jira',               linked: false, category: ['Project & Task'],                          iconBg: '#0052CC', iconColor: '#fff', iconLabel: 'J',  icon: iconJira,   authType: 'oauth' },
+    { id: 'linear',     name: 'Linear',             linked: false, category: ['Project & Task'],                          iconBg: '#5E6AD2', iconColor: '#fff', iconLabel: 'L',  icon: iconLinear, authType: 'oauth' },
+    { id: 'github',     name: 'GitHub',             linked: true,  category: ['Featured', 'Project & Task'],              iconBg: '#24292E', iconColor: '#fff', iconLabel: 'GH', icon: iconGitHub, authType: 'oauth' },
+    { id: 'gitlab',     name: 'GitLab',             linked: false, category: ['Project & Task'],                          iconBg: '#FC6D26', iconColor: '#fff', iconLabel: 'GL', icon: iconGitLab, authType: 'oauth' },
+    // Customer & Growth
+    { id: 'hubspot',    name: 'HubSpot',            linked: false, category: ['Customer & Growth'],                       iconBg: '#FF7A59', iconColor: '#fff', iconLabel: 'HS', icon: iconHubSpot,   authType: 'oauth' },
+    { id: 'mailchimp',  name: 'Mailchimp',          linked: false, category: ['Customer & Growth'],                       iconBg: '#FFE01B', iconColor: '#000', iconLabel: 'MC', icon: iconMailchimp, authType: 'oauth' },
+    { id: 'sendgrid',   name: 'SendGrid',           linked: false, category: ['Customer & Growth'],                       iconBg: '#1A82E2', iconColor: '#fff', iconLabel: 'SG', icon: iconSendGrid,  authType: 'oauth' },
+    // Data & Analytics
+    { id: 'airtable',   name: 'Airtable',           linked: false, category: ['Data & Analytics'],                        iconBg: '#FCBF49', iconColor: '#fff', iconLabel: 'AT', icon: iconAirtable,   authType: 'oauth' },
+    { id: 'mixpanel',   name: 'Mixpanel',           linked: false, category: ['Data & Analytics'],                        iconBg: '#7856FF', iconColor: '#fff', iconLabel: 'MP', icon: iconMixpanel,   authType: 'oauth' },
+    { id: 'ganalytics', name: 'Google Analytics',   linked: false, category: ['Data & Analytics'],                        iconBg: '#E37400', iconColor: '#fff', iconLabel: 'GA', icon: iconGAnalytics, authType: 'oauth' },
+    // Design & Creative
+    { id: 'figma',      name: 'Figma',              linked: true,  category: ['Design & Creative'],                       iconBg: '#F24E1E', iconColor: '#fff', iconLabel: 'F',  icon: iconFigma,  authType: 'oauth' },
+    { id: 'framer',     name: 'Framer',             linked: false, category: ['Design & Creative'],                       iconBg: '#0055FF', iconColor: '#fff', iconLabel: 'Fr', icon: iconFramer, authType: 'oauth' },
+    // AI Models
+    { id: 'chatgpt',    name: 'ChatGPT',            linked: true,  category: ['AI Models'],                               iconBg: '#10A37F', iconColor: '#fff', iconLabel: 'AI', icon: iconChatGPT,  authType: 'api-key' },
+    { id: 'deepseek',   name: 'DeepSeek',           linked: false, category: ['AI Models'],                               iconBg: '#0066FF', iconColor: '#fff', iconLabel: 'DS', icon: iconDeepSeek, authType: 'api-key' },
+    { id: 'cursor',     name: 'Cursor',             linked: false, category: ['AI Models'],                               iconBg: '#000',    iconColor: '#fff', iconLabel: 'Cu', icon: iconCursor,   authType: 'api-key' },
   ]);
   const [selectedLinkAppId, setSelectedLinkAppId] = useState<string | null>(null);
 

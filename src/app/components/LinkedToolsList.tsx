@@ -10,6 +10,8 @@ export interface AppItem {
   iconColor: string;
   iconLabel: string;
   email?: string;
+  /** Optional icon image (imported PNG) */
+  icon?: string;
   /** 'api-key' = show key-input modal, 'oauth' = show browser-auth modal */
   authType: 'api-key' | 'oauth';
 }
@@ -27,8 +29,8 @@ export function LinkedToolsList({ apps, selectedId, onSelect }: LinkedToolsListP
     <div className="linked-tools-list flex flex-col h-full bg-white border-r border-gray-200 w-[375px] flex-shrink-0">
       {/* Header */}
       <div className="flex-shrink-0 z-20">
-        <div className="h-[60px] px-6 flex items-center border-b border-gray-100">
-          <h2 className="text-gray-900" style={{ fontSize: '16px', fontWeight: 600, lineHeight: '22px' }}>
+        <div className="h-[72px] px-6 flex items-center border-b border-gray-100">
+          <h2 className="text-lg font-medium text-gray-900">
             Link
           </h2>
         </div>
@@ -56,17 +58,21 @@ export function LinkedToolsList({ apps, selectedId, onSelect }: LinkedToolsListP
             >
               {/* App Icon */}
               <div className="linked-tool-icon-wrap w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 border border-gray-100 bg-white">
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center"
-                  style={{ backgroundColor: app.iconBg }}
-                >
-                  <span
-                    className="font-bold text-xs leading-none"
-                    style={{ color: app.iconColor }}
+                {app.icon ? (
+                  <img src={app.icon} alt={app.name} className="w-9 h-9 object-contain" />
+                ) : (
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center"
+                    style={{ backgroundColor: app.iconBg }}
                   >
-                    {app.iconLabel}
-                  </span>
-                </div>
+                    <span
+                      className="font-bold text-xs leading-none"
+                      style={{ color: app.iconColor }}
+                    >
+                      {app.iconLabel}
+                    </span>
+                  </div>
+                )}
               </div>
 
               {/* Name + email */}

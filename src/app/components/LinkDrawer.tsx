@@ -39,7 +39,7 @@ export function LinkDrawer({ isOpen, onClose, apps, onOpenLinkModal }: LinkDrawe
             >
               {/* Modal header with close button */}
               <div className="flex items-center justify-between px-10 pt-6 pb-0 flex-shrink-0">
-                <h2 className="text-lg font-semibold text-gray-900">Link</h2>
+                <h2 className="text-xl font-semibold text-gray-900">Link</h2>
                 <button
                   onClick={onClose}
                   className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors text-gray-400 hover:text-gray-600"

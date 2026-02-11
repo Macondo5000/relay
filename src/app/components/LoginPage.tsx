@@ -21,6 +21,26 @@ interface Account {
 
 const ACCOUNTS: Account[] = [
   {
+    id: 'shawn',
+    initials: 'SG',
+    name: 'Shawn Guo',
+    tag: 'Departing',
+    tagColor: 'bg-gray-100 text-gray-600',
+    description: 'Tanka, Product Manager · Product',
+    avatarBg: 'bg-teal-100',
+    avatarText: 'text-teal-700',
+  },
+  {
+    id: 'koko',
+    initials: 'KL',
+    name: 'Koko Lv',
+    tag: 'Active',
+    tagColor: 'bg-gray-100 text-gray-600',
+    description: 'Tanka, VP of Design · Design',
+    avatarBg: 'bg-violet-100',
+    avatarText: 'text-violet-700',
+  },
+  {
     id: 'cody',
     initials: 'CS',
     name: 'Cody Song',
@@ -29,26 +49,6 @@ const ACCOUNTS: Account[] = [
     description: 'Director of Compensation and Incentives · People Ops',
     avatarBg: 'bg-sky-100',
     avatarText: 'text-sky-700',
-  },
-  {
-    id: 'koko',
-    initials: 'KL',
-    name: 'Koko Lv',
-    tag: 'Active',
-    tagColor: 'bg-emerald-50 text-emerald-600',
-    description: 'Tanka, VP of Design · Design',
-    avatarBg: 'bg-violet-100',
-    avatarText: 'text-violet-700',
-  },
-  {
-    id: 'shawn',
-    initials: 'SG',
-    name: 'Shawn Guo',
-    tag: 'Departing',
-    tagColor: 'bg-violet-50 text-violet-600',
-    description: 'Tanka, Product Manager · Product',
-    avatarBg: 'bg-teal-100',
-    avatarText: 'text-teal-700',
   },
 ];
 
@@ -85,13 +85,8 @@ export function LoginPage({ onLogin }: LoginPageProps) {
           transition={{ duration: 0.45, delay: 0.12, ease: 'easeOut' }}
           className="w-full bg-white rounded-2xl border border-gray-200/70 overflow-hidden"
         >
-          {/* Card header — pt-6 sets the top spacing */}
-          <div className="px-6 pt-6 pb-2">
-            <p className="text-[15px] text-gray-400 text-center" style={{ fontWeight: 400 }}>Select your account to sign in</p>
-          </div>
-
-          {/* Account list — pb-6 matches top spacing */}
-          <div className="px-3 pb-4">
+          {/* Account list */}
+          <div className="px-3 py-4">
             {ACCOUNTS.map((account, idx) => (
               <div key={account.id}>
                 <motion.button

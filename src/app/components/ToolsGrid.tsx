@@ -115,17 +115,21 @@ export function ToolsGrid({ apps, onOpenLinkModal, compact = false, centered = f
                 >
                   {/* Icon */}
                   <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 border border-gray-100 bg-white">
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center"
-                      style={{ backgroundColor: app.iconBg }}
-                    >
-                      <span
-                        className="font-bold text-xs leading-none"
-                        style={{ color: app.iconColor }}
+                    {app.icon ? (
+                      <img src={app.icon} alt={app.name} className="w-9 h-9 object-contain" />
+                    ) : (
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center"
+                        style={{ backgroundColor: app.iconBg }}
                       >
-                        {app.iconLabel}
-                      </span>
-                    </div>
+                        <span
+                          className="font-bold text-xs leading-none"
+                          style={{ color: app.iconColor }}
+                        >
+                          {app.iconLabel}
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Info */}

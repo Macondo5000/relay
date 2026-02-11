@@ -316,7 +316,7 @@ export function GroupChatInterface({ chatId, chatName, memberCount, progress, co
           {linkApps && onOpenLinkModal && (
             <button
               onClick={() => setIsLinkDrawerOpen(true)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-colors"
               title="Link Tools"
             >
               <Link2 className="w-4 h-4" />

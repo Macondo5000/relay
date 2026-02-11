@@ -27,7 +27,7 @@ export function AuthPage({ onAuthenticated }: AuthPageProps) {
       <div className="flex items-center justify-between px-8 py-5">
         <div className="flex items-center gap-2.5">
           <RelayLogo size={32} />
-          <span className="text-lg font-bold text-gray-900 tracking-tight">RELAY</span>
+          <span className="text-xl font-bold text-gray-900 tracking-tight">Relay</span>
         </div>
         <div className="flex items-center gap-3">
           {view === 'signup' ? (
@@ -121,11 +121,11 @@ export function AuthPage({ onAuthenticated }: AuthPageProps) {
                     onClick={onAuthenticated}
                     className="w-full flex items-center justify-center gap-2.5 py-3 rounded-xl border border-gray-200 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
                   >
-                    <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24">
-                      <path d="M11.4 24H0V12.6L11.4 0H24v11.4L11.4 24z" fill="#F25022" transform="scale(0.5) translate(0,0)"/>
-                      <path d="M24 24H12.6V12.6H24V24z" fill="#00A4EF" transform="scale(0.5) translate(24,0)"/>
-                      <path d="M11.4 24H0V12.6h11.4V24z" fill="#7FBA00" transform="scale(0.5) translate(0,24)"/>
-                      <path d="M24 24H12.6V12.6H24V24z" fill="#FFB900" transform="scale(0.5) translate(24,24)"/>
+                    <svg className="w-[18px] h-[18px]" viewBox="0 0 21 21">
+                      <rect x="0" y="0" width="10" height="10" fill="#F25022"/>
+                      <rect x="11" y="0" width="10" height="10" fill="#7FBA00"/>
+                      <rect x="0" y="11" width="10" height="10" fill="#00A4EF"/>
+                      <rect x="11" y="11" width="10" height="10" fill="#FFB900"/>
                     </svg>
                     Continue with Microsoft
                   </button>
@@ -218,11 +218,11 @@ export function AuthPage({ onAuthenticated }: AuthPageProps) {
                     onClick={onAuthenticated}
                     className="w-full flex items-center justify-center gap-2.5 py-3 rounded-xl border border-gray-200 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
                   >
-                    <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24">
-                      <path d="M11.4 24H0V12.6L11.4 0H24v11.4L11.4 24z" fill="#F25022" transform="scale(0.5) translate(0,0)"/>
-                      <path d="M24 24H12.6V12.6H24V24z" fill="#00A4EF" transform="scale(0.5) translate(24,0)"/>
-                      <path d="M11.4 24H0V12.6h11.4V24z" fill="#7FBA00" transform="scale(0.5) translate(0,24)"/>
-                      <path d="M24 24H12.6V12.6H24V24z" fill="#FFB900" transform="scale(0.5) translate(24,24)"/>
+                    <svg className="w-[18px] h-[18px]" viewBox="0 0 21 21">
+                      <rect x="0" y="0" width="10" height="10" fill="#F25022"/>
+                      <rect x="11" y="0" width="10" height="10" fill="#7FBA00"/>
+                      <rect x="0" y="11" width="10" height="10" fill="#00A4EF"/>
+                      <rect x="11" y="11" width="10" height="10" fill="#FFB900"/>
                     </svg>
                     Continue with Microsoft
                   </button>

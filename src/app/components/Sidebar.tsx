@@ -81,10 +81,10 @@ export function Sidebar({ activeTab, onTabChange, collapsed, onToggleCollapse, o
       )}
     >
       {/* Header / Logo + Org Switcher */}
-      <div className="flex-shrink-0 px-4 pt-4 pb-2">
+      <div className="flex-shrink-0 px-4 pt-4 pb-4">
         {/* Logo Row — logo stays at same position */}
         <div className={clsx(
-          "flex items-center mb-3 h-8",
+          "flex items-center mb-10 h-8",
           collapsed ? "justify-center" : "justify-between px-2"
         )}>
           <div
@@ -120,23 +120,23 @@ export function Sidebar({ activeTab, onTabChange, collapsed, onToggleCollapse, o
         </div>
 
         {/* Org Switcher */}
-        <div className="relative" ref={orgDropdownRef}>
+        <div className="relative px-2" ref={orgDropdownRef}>
           <button
             onClick={() => setIsOrgDropdownOpen(!isOrgDropdownOpen)}
             className={clsx(
-              "w-full flex items-center rounded-lg transition-colors",
-              collapsed ? "justify-center p-2" : "gap-2.5 px-2.5 py-2",
+              "w-full flex items-center rounded-md transition-colors border",
+              collapsed ? "justify-center aspect-square p-2" : "gap-2.5 px-2 py-1.5",
               isDarkMode
-                ? "hover:bg-[#2f2f2f]"
-                : "hover:bg-gray-100"
+                ? "hover:bg-[#2f2f2f] border-[#333]"
+                : "hover:bg-gray-100 border-gray-200"
             )}
             title={collapsed ? currentOrg.name : undefined}
           >
             <div className={clsx(
-              "w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 border",
-              isDarkMode ? "bg-[#2a2a2a] border-[#3a3a3a] text-[#999]" : "bg-white border-gray-200 text-gray-400"
+              "w-6 h-6 rounded flex items-center justify-center flex-shrink-0",
+              isDarkMode ? "text-[#999]" : "text-gray-400"
             )}>
-              <Building2 className="w-4 h-4" />
+              <Building2 className="w-3.5 h-3.5" />
             </div>
             {!collapsed && (
               <>
@@ -191,8 +191,8 @@ export function Sidebar({ activeTab, onTabChange, collapsed, onToggleCollapse, o
                         )}
                       >
                         <div className={clsx(
-                          "w-7 h-7 rounded-md flex items-center justify-center flex-shrink-0 border",
-                          isDarkMode ? "bg-[#2a2a2a] border-[#3a3a3a] text-[#999]" : "bg-white border-gray-200 text-gray-400"
+                          "w-6 h-6 rounded flex items-center justify-center flex-shrink-0",
+                          isDarkMode ? "text-[#999]" : "text-gray-400"
                         )}>
                           <Building2 className="w-3.5 h-3.5" />
                         </div>
