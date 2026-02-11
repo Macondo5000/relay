@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { PanelLeft, LogOut, Sun, Moon, ChevronDown, Check, Plus, Building2 } from 'lucide-react';
+import { PanelLeft, LogOut, Sun, Moon, ChevronDown, Check, Building2 } from 'lucide-react';
 import { clsx } from 'clsx';
 import { motion, AnimatePresence } from 'motion/react';
 import { UserProfile, Organization } from '../types';
@@ -215,30 +215,6 @@ export function Sidebar({ activeTab, onTabChange, collapsed, onToggleCollapse, o
                   })}
                 </div>
 
-                <div className={clsx(
-                  "border-t mx-1.5",
-                  isDarkMode ? "border-[#333]" : "border-gray-100"
-                )} />
-
-                <div className="p-1.5">
-                  <button className={clsx(
-                    "w-full flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-left transition-colors",
-                    isDarkMode ? "hover:bg-[#2a2a2a]" : "hover:bg-gray-50"
-                  )}>
-                    <div className={clsx(
-                      "w-7 h-7 rounded-md flex items-center justify-center border border-dashed",
-                      isDarkMode ? "border-[#555] text-[#666]" : "border-gray-300 text-gray-400"
-                    )}>
-                      <Plus className="w-3.5 h-3.5" />
-                    </div>
-                    <span className={clsx(
-                      "text-sm font-medium",
-                      isDarkMode ? "text-[#888]" : "text-gray-500"
-                    )}>
-                      Add Organization
-                    </span>
-                  </button>
-                </div>
               </motion.div>
             )}
           </AnimatePresence>

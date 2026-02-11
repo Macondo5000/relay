@@ -14,7 +14,7 @@ interface LinkAppsProps {
 export function LinkApps({ apps, onOpenLinkModal }: LinkAppsProps) {
   return (
     <div className="flex-1 flex flex-col h-full min-w-0 overflow-hidden bg-gray-50">
-      <ToolsGrid apps={apps} onOpenLinkModal={onOpenLinkModal} />
+      <ToolsGrid apps={apps} onOpenLinkModal={onOpenLinkModal} centered />
     </div>
   );
 }
