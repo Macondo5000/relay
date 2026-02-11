@@ -33,67 +33,49 @@ export function OnboardingGate({ apps, onToggleLink, onContinue, userName }: Onb
   };
 
   return (
-    <div className="flex w-full h-screen bg-gray-50 overflow-hidden">
-      <div className="flex flex-col w-full max-w-[900px] h-full mx-auto">
-
-        {/* ── Step Progress Bar ──────────────────────── */}
-        <div className="flex items-center justify-center pt-5 pb-2 flex-shrink-0">
-          <div className="flex items-center gap-2">
-            <div className="w-16 h-1 rounded-full bg-gray-300" />
-            <div className="w-16 h-1 rounded-full bg-gray-900" />
+    <div className="flex flex-col w-full h-screen bg-gray-50 overflow-hidden">
+      {/* ── Top Bar: Logo + Welcome + Continue ── */}
+      <div className="flex-shrink-0 flex items-center justify-between px-10 py-6 border-b border-gray-200/60">
+        <div className="flex items-center gap-4">
+          <RelayLogo size={36} />
+          <div>
+            <h1
+              className="text-gray-900"
+              style={{ fontSize: '18px', fontWeight: 700, lineHeight: '24px' }}
+            >
+              Welcome, {firstName}
+            </h1>
+            <p
+              className="text-gray-400 mt-0.5"
+              style={{ fontSize: '13px', lineHeight: '18px' }}
+            >
+              Before starting the offboarding process, please complete the connection of your relevant data sources.
+            </p>
           </div>
         </div>
 
-        {/* ── Spacer ── */}
-        <div className="flex-1 min-h-0 max-h-[40px]" />
-
-        {/* ── Logo + Welcome ────────────────────────── */}
-        <div className="flex flex-col items-center pt-2 pb-5 flex-shrink-0">
-          <RelayLogo size={44} className="mb-4" />
-          <h1
-            className="text-gray-900 text-center mb-2"
-            style={{ fontSize: '24px', fontWeight: 700, lineHeight: '32px' }}
-          >
-            Welcome, {firstName}
-          </h1>
-          <p
-            className="text-gray-500 text-center max-w-md"
-            style={{ fontSize: '15px', lineHeight: '22px' }}
-          >
-            Before getting started, please connect at least one app so Relay can
-            help with your handover.
-          </p>
-        </div>
-
-        {/* ── Tools Grid (reusing shared component) ── */}
-        <div className="flex-1 min-h-0 overflow-hidden">
-          <ToolsGrid
-            apps={apps}
-            onOpenLinkModal={handleOpenLinkModal}
-          />
-        </div>
-
-        {/* ── Continue Button ────────────────────────── */}
-        <div className="flex-shrink-0 pt-4 pb-6 px-10">
-          <button
-            onClick={onContinue}
-            disabled={!canContinue}
-            className={clsx(
-              'w-full flex items-center justify-center py-3 rounded-xl text-sm transition-all',
-              canContinue
-                ? 'bg-gray-900 text-white hover:bg-gray-800 cursor-pointer'
-                : 'bg-gray-200 text-gray-400 cursor-not-allowed'
-            )}
-            style={{ fontWeight: 600 }}
-          >
-            Continue
-          </button>
-          {!canContinue && (
-            <p className="text-center text-gray-400 text-xs mt-2">
-              Connect at least 1 app to continue
-            </p>
+        <button
+          onClick={onContinue}
+          disabled={!canContinue}
+          className={clsx(
+            'flex-shrink-0 px-6 py-2.5 rounded-xl text-sm transition-all',
+            canContinue
+              ? 'bg-gray-900 text-white hover:bg-gray-800 cursor-pointer'
+              : 'bg-gray-200 text-gray-400 cursor-not-allowed'
           )}
-        </div>
+          style={{ fontWeight: 600 }}
+        >
+          Continue
+        </button>
+      </div>
+
+      {/* ── Tools Grid (takes full remaining space) ── */}
+      <div className="flex-1 min-h-0 overflow-hidden">
+        <ToolsGrid
+          apps={apps}
+          onOpenLinkModal={handleOpenLinkModal}
+          centered
+        />
       </div>
 
       {/* ── Link Auth Modal ─────────────────────────── */}
