@@ -150,9 +150,9 @@ function ApiKeyModal({ app, onClose, onLinked }: LinkModalProps) {
   return (
     <ModalWrapper onClose={onClose}>
       <div className="link-modal-content flex flex-col items-center">
-        {/* Logos — Relay 56×56 + App 48×48 */}
+        {/* Logos — Relay 48×48 + App 48×48 */}
         <div className="flex items-center gap-3 mb-4">
-          <RelayLogo size={56} />
+          <RelayLogo size={48} />
           <span className="text-gray-400" style={{ fontSize: '20px' }}>+</span>
           <AppIcon app={app} size={48} />
         </div>
@@ -282,11 +282,11 @@ function OAuthModal({ app, onClose, onLinked }: LinkModalProps) {
           <ExternalLink className="w-3 h-3 text-gray-300 flex-shrink-0" />
         </div>
 
-        {/* Logos — App 48×48 + Relay 56×56 */}
+        {/* Logos — App 48×48 + Relay 48×48 */}
         <div className="flex items-center gap-3 mb-4">
           <AppIcon app={app} size={48} />
           <ArrowLeftRight className="w-5 h-5 text-gray-300" />
-          <RelayLogo size={56} />
+          <RelayLogo size={48} />
         </div>
 
         {step === 'done' ? (
